@@ -1,4 +1,4 @@
-// app.js - مدیریت تب‌ها، سرچ و نمایش پاپ‌آپ فقط قیمت
+// app.js - نمایش مستقیم و تفکیک‌شده وزن‌ها و قیمت‌ها زیر هر غذا
 let currentCat = "all";
 
 function formatMoney(num) {
@@ -44,53 +44,27 @@ function renderList(q = "") {
     const card = document.createElement("div");
     card.className = "item-card";
 
-    const minPrice = it.variants[0].price;
+    // ساخت سطرهای تفکیک‌شده قیمت (پرسی، کیلویی و...)
+    const variantsHtml = it.variants.map(v => `
+      <div class="variant-row">
+        <span class="variant-name">${v.label}</span>
+        <span class="variant-price">${formatMoney(v.price)}</span>
+      </div>
+    `).join("");
 
     card.innerHTML = `
-      <div class="item-info">
+      <div class="item-head">
         <h4 class="item-title">${it.name}</h4>
         <p class="item-desc">${it.desc}</p>
       </div>
-      <div class="item-badge">
-        <span class="price-hint">${formatMoney(minPrice)}</span>
-        <span class="click-hint">مشاهده قیمت‌ها ❯</span>
+      <div class="item-variants-box">
+        ${variantsHtml}
       </div>
     `;
 
-    card.onclick = () => showPrices(it);
     listWrap.appendChild(card);
   });
 }
-
-function showPrices(it) {
-  document.getElementById("modalTitle").innerText = it.name;
-  document.getElementById("modalDesc").innerText = it.desc;
-
-  const pricesBox = document.getElementById("modalPrices");
-  pricesBox.innerHTML = "";
-
-  it.variants.forEach(v => {
-    const row = document.createElement("div");
-    row.className = "price-row";
-    row.innerHTML = `
-      <span class="label">${v.label}</span>
-      <span class="cost">${formatMoney(v.price)}</span>
-    `;
-    pricesBox.appendChild(row);
-  });
-
-  document.getElementById("modalOverlay").classList.add("active");
-}
-
-function closePopup() {
-  document.getElementById("modalOverlay").classList.remove("active");
-}
-
-document.getElementById("modalClose").onclick = closePopup;
-document.getElementById("modalCloseBtn").onclick = closePopup;
-document.getElementById("modalOverlay").onclick = (e) => {
-  if (e.target.id === "modalOverlay") closePopup();
-};
 
 document.getElementById("searchInput").oninput = (e) => {
   renderList(e.target.value.trim());

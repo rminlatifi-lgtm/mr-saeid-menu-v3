@@ -9,10 +9,9 @@
 </head>
 <body>
 
-  <!-- هدر سایت با جایگاه عکس لوگو -->
+  <!-- هدر سایت -->
   <header class="header">
     <div class="logo">
-      <!-- تصویر لوگو: فایل لوگوی خودت رو با نام logo.png کنار همین فایل‌ها بذار -->
       <img src="./Img/logo.png" alt="لوگوی مستر سعید" class="brand-logo" onerror="this.style.display='none'">
       <div>
         <h1>مستر سعید</h1>
@@ -22,10 +21,10 @@
     <a href="tel:09380523929" class="btn-call-header">📞 تماس</a>
   </header>
 
-  <!-- معرفی و جستجو -->
+  <!-- بخش معرفی و جستجو -->
   <section class="intro">
     <h2>منوی قیمت غذاها</h2>
-    <p class="subtitle">برای مشاهده وزن‌ها و قیمت‌ها، روی هر غذا بزنید.</p>
+    <p class="subtitle">قیمت‌های روزانه و وزن‌های مختلف هر غذا</p>
     <div class="search-wrap">
       <input type="text" id="searchInput" placeholder="جستجوی غذا یا دسر...">
     </div>
@@ -40,7 +39,7 @@
     <p id="noResults" class="empty-msg hidden">موردی یافت نشد.</p>
   </main>
 
-  <!-- اطلاعات شعبه و دکمه تک تماس -->
+  <!-- اطلاعات شعبه و دکمه تماس تلفنی -->
   <section class="info-box">
     <div class="info-row">
       <span class="icon">📍</span>
@@ -61,21 +60,6 @@
   <footer class="footer">
     <p>مستر سعید — آش • حلیم • غذای روز</p>
   </footer>
-
-  <!-- پاپ‌آپ مشاهده قیمت‌ها -->
-  <div class="modal-backdrop" id="modalOverlay">
-    <div class="modal-box">
-      <div class="modal-top">
-        <h3 id="modalTitle">نام غذا</h3>
-        <button class="btn-close" id="modalClose">✕</button>
-      </div>
-      <p id="modalDesc" class="modal-desc"></p>
-      
-      <div class="price-list" id="modalPrices"></div>
-      
-      <button class="btn-done" id="modalCloseBtn">بستن</button>
-    </div>
-  </div>
 
   <script src="data.js"></script>
   <script src="app.js"></script>

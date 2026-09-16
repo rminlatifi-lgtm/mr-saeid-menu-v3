@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./Img/logo.png">
+  <title>منوی مستر سعید | آش • حلیم • غذای روز</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- هدر سایت با جایگاه عکس لوگو -->
+  <header class="header">
+    <div class="logo">
+      <!-- تصویر لوگو: فایل لوگوی خودت رو با نام logo.png کنار همین فایل‌ها بذار -->
+      <img src="./Img/logo.png" alt="لوگوی مستر سعید" class="brand-logo" onerror="this.style.display='none'">
+      <div>
+        <h1>مستر سعید</h1>
+        <p>آش • حلیم • غذای روز</p>
+      </div>
+    </div>
+    <a href="tel:09380523929" class="btn-call-header">📞 تماس</a>
+  </header>
+
+  <!-- معرفی و جستجو -->
+  <section class="intro">
+    <h2>منوی قیمت غذاها</h2>
+    <p class="subtitle">برای مشاهده وزن‌ها و قیمت‌ها، روی هر غذا بزنید.</p>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="جستجوی غذا یا دسر...">
+    </div>
+  </section>
+
+  <!-- تب‌های دسته‌بندی -->
+  <nav class="categories" id="categoryTabs"></nav>
+
+  <!-- لیست غذاها -->
+  <main class="container">
+    <div class="menu-list" id="menuList"></div>
+    <p id="noResults" class="empty-msg hidden">موردی یافت نشد.</p>
+  </main>
+
+  <!-- اطلاعات شعبه و دکمه تک تماس -->
+  <section class="info-box">
+    <div class="info-row">
+      <span class="icon">📍</span>
+      <span>چهارراه شاپور، پایین‌تر از آگاهی شاپور، پلاک ۲۳۲</span>
+    </div>
+    <div class="info-row">
+      <span class="icon">🕐</span>
+      <span>هر روز ۵ صبح تا ۲ بامداد</span>
+    </div>
+    <div class="info-actions">
+      <a href="tel:09380523929" class="btn-call-single">
+        📞 تماس تلفنی: ۰۹۳۸۰۵۲۳۹۲۹
+      </a>
+    </div>
+  </section>
+
+  <!-- فوتر -->
+  <footer class="footer">
+    <p>مستر سعید — آش • حلیم • غذای روز</p>
+  </footer>
+
+  <!-- پاپ‌آپ مشاهده قیمت‌ها -->
+  <div class="modal-backdrop" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-top">
+        <h3 id="modalTitle">نام غذا</h3>
+        <button class="btn-close" id="modalClose">✕</button>
+      </div>
+      <p id="modalDesc" class="modal-desc"></p>
+      
+      <div class="price-list" id="modalPrices"></div>
+      
+      <button class="btn-done" id="modalCloseBtn">بستن</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Vazirmatn", Tahoma, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #0d0f12;
+  color: #f1f1f1;
+  direction: rtl;
+  min-height: 100vh;
+  padding-bottom: 24px;
+}
+
+/* هدر */
+.header {
+  background: #14171d;
+  border-bottom: 1px solid #232732;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* استایل عکس لوگو */
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #2f3647;
+}
+
+.logo h1 {
+  font-size: 1.15rem;
+  color: #e5b869;
+  line-height: 1.2;
+}
+
+.logo p {
+  font-size: 0.72rem;
+  color: #8c93a3;
+}
+
+.btn-call-header {
+  background: #232732;
+  color: #e5b869;
+  border: 1px solid #363c4c;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* بخش معرفی */
+.intro {
+  max-width: 600px;
+  margin: 18px auto 8px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.82rem;
+  color: #8c93a3;
+  margin-bottom: 14px;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 11px 14px;
+  background: #14171d;
+  border: 1px solid #272d3b;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-wrap input:focus {
+  border-color: #e5b869;
+}
+
+/* تب‌های دسته‌بندی */
+.categories {
+  max-width: 600px;
+  margin: 12px auto;
+  padding: 0 16px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.categories::-webkit-scrollbar { display: none; }
+
+.tab {
+  background: #171a22;
+  border: 1px solid #272d3b;
+  color: #9aa2b2;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #e5b869;
+  color: #000;
+  font-weight: 700;
+  border-color: #e5b869;
+}
+
+/* لیست کارت‌های غذا */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 8px 16px 20px;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-card {
+  background: #14171d;
+  border: 1px solid #232732;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.item-card:active {
+  background: #1d222b;
+}
+
+.item-info {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.item-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.item-desc {
+  font-size: 0.78rem;
+  color: #8c93a3;
+  line-height: 1.35;
+}
+
+.item-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.price-hint {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #e5b869;
+  white-space: nowrap;
+}
+
+.click-hint {
+  font-size: 0.7rem;
+  color: #6d7587;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #777;
+  padding: 30px;
+  font-size: 0.9rem;
+}
+.hidden { display: none; }
+
+/* اطلاعات آدرس و دکمه تماس */
+.info-box {
+  max-width: 600px;
+  margin: 16px auto;
+  padding: 14px 16px;
+  background: #14171d;
+  border: 1px solid #232732;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #c9ced8;
+}
+
+.info-row .icon {
+  font-size: 18px;
+}
+
+.info-actions {
+  margin-top: 4px;
+}
+
+.btn-call-single {
+  display: block;
+  text-align: center;
+  padding: 13px;
+  border-radius: 10px;
+  background: #e5b869;
+  color: #111;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(229, 184, 105, 0.2);
+}
+
+.btn-call-single:active {
+  opacity: 0.85;
+}
+
+/* فوتر */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+/* پاپ‌آپ فقط قیمت */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-backdrop.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-box {
+  background: #171b22;
+  border: 1px solid #2f3647;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 400px;
+  padding: 18px;
+}
+
+.modal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.modal-top h3 {
+  color: #e5b869;
+  font-size: 1.15rem;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  color: #8c93a3;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.modal-desc {
+  font-size: 0.8rem;
+  color: #9ba1b2;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f1217;
+  border: 1px solid #252a37;
+  padding: 11px 13px;
+  border-radius: 8px;
+}
+
+.price-row .label {
+  font-size: 0.88rem;
+  color: #e2e4ea;
+}
+
+.price-row .cost {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e5b869;
+}
+
+.btn-done {
+  width: 100%;
+  padding: 10px;
+  background: #242936;
+  color: #fff;
+  border: 1px solid #363e52;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
